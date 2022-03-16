@@ -12,6 +12,9 @@ public class Main {
     }
 
     private static void printArray(long[] array){
+        if(array == null){
+            throw new IllegalArgumentException("Array nao pode ser null.");
+        }
         System.out.print("Array: {");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i]);

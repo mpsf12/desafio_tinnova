@@ -6,8 +6,10 @@ import java.util.ArrayList;
 
 public class BubbleSort {
 
-    public static long[] sort(long @NotNull [] array){
-
+    public static long[] sort(long[] array){
+        if(array == null){
+            throw new IllegalArgumentException("Array nao pode ser null.");
+        }
         boolean modificado = false;
         for (int i = 1; i < array.length; i++) {
             for (int j = 0; j < array.length - 1; j++) {
