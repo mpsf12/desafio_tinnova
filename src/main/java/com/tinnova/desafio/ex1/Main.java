@@ -1,6 +1,6 @@
 package com.tinnova.desafio.ex1;
 
-public class MainEx1 {
+public class Main {
 
     public static void main(String[] args) {
 
