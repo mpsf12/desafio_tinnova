@@ -32,7 +32,10 @@ public class VeiculoServiceImpl implements VeiculoService {
 
     // TODO: 16/03/2022 - Criar metodo para buscar por marca, ano e/ou cor
     public List<VeiculoDto> retornaVeiculosPorMarcaAnoCor(String marca, Integer ano, String cor){
-        return retornaTodosVeiculos();
+        return veiculoRepository.findVeiculoByMarcaAndAnoAndCor(marca, ano, cor)
+                .stream()
+                .map(veiculo -> new VeiculoDto(veiculo))
+                .collect(Collectors.toList());
     }
 
     public VeiculoDto retornaVeiculoPorId(long id){
@@ -46,6 +49,8 @@ public class VeiculoServiceImpl implements VeiculoService {
     }
 
     public VeiculoDto salvaVeiculo(VeiculoDto veiculoDto){
+        veiculoDto.setCreated(new Date());
+        veiculoDto.setUpdated(new Date());
         return new VeiculoDto(veiculoRepository.save(dtoToEntity(veiculoDto)));
     }
 
