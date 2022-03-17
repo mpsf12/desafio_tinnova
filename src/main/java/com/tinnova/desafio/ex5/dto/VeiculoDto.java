@@ -16,6 +16,7 @@ public class VeiculoDto {
     private long id;
     private String veiculo;
     private String marca;
+    private String cor;
     private int ano;
     private String descricao;
     private boolean vendido;

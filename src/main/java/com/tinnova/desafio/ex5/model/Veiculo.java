@@ -20,6 +20,7 @@ public class Veiculo {
 
     private String veiculo;
     private String marca;
+    private String cor;
     private int ano;
     @Lob
     private String descricao;
