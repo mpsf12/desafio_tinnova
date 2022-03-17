@@ -34,8 +34,6 @@ public class VeiculoController {
 
     @PostMapping("/veiculos")
     public ResponseEntity<VeiculoDto> salvaVeiculo(@RequestBody VeiculoDto veiculoDto){
-        veiculoDto.setCreated(new Date());
-        veiculoDto.setUpdated(new Date());
         return ResponseEntity.ok().body(veiculoService.salvaVeiculo(veiculoDto));
     }
 
